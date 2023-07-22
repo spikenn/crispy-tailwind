@@ -4,11 +4,11 @@
 
 import re
 
+from crispy_forms.utils import TEMPLATE_PACK, get_template_pack
 from django import forms, template
 from django.conf import settings
 from django.template import Context, loader
 
-from crispy_forms.utils import TEMPLATE_PACK, get_template_pack
 from crispy_tailwind.tailwind import CSSContainer
 
 register = template.Library()
@@ -52,6 +52,12 @@ def is_clearable_file(field):
 @register.filter
 def is_multivalue(field):
     return isinstance(field.field.widget, forms.MultiWidget)
+
+
+@register.filter
+def is_dateinput(field):
+    # https://flowbite.com/docs/plugins/datepicker/
+    return isinstance(field.field.widget, forms.DateInput)
 
 
 @register.filter
