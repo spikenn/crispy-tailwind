@@ -6,7 +6,9 @@
         datepicker-format="yyyy-mm-dd"
         type="text"
         name="{% if field.name|wordcount > 1 %}{{ field.name|slugify }}{% else %}{{ field.name }}{% endif %}"
+        {% if field.value %}
         value="{{ field.value|stringformat:'s' }}"
+        {% endif %}
         id="id_{{ field.html_name }}"
         {% if field.field.required %}required{% endif %}
         {{ field.field.widget.attrs|flatatt }}
