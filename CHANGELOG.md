@@ -6,6 +6,10 @@
 * Dropped support for Django 2.2 (#116)
 * Dropped support for Python 3.6 (#116)
 
+## 0.6 (2023-11-18)
+* Updated select and select_option templates
+* Added custom DateInput (requires [Flowbite Datepicker](https://flowbite.com/docs/plugins/datepicker/))
+
 ## 0.5 (2021-04-21)
 * Added support for custom widgets (#92)
 * Confirmed support for Django 3.2 (#91)
